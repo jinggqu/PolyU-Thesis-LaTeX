@@ -1,6 +1,16 @@
 % Packages and machine-readable PDF configuration belong here. Most users do
 % not need to edit this file when changing thesis content or front-matter items.
 
+% Apply the accent-colour choice from metadata.tex. Both named colours are
+% changed together so headings, contents entries, citations, and links remain
+% visually consistent. The switch does not affect the PolyU logo artwork.
+\ifthesisredaccent
+  % Keep the PolyU-red defaults defined by polyu-thesis.cls.
+\else
+  \colorlet{ThesisAccent}{black}
+  \colorlet{ThesisLink}{black}
+\fi
+
 \usepackage[
   backend=biber,
   style=numeric-comp,

@@ -25,7 +25,10 @@
 % Load theorem support before newtxmath so both agree on the proof-end symbol.
 \RequirePackage{amsthm}
 \RequirePackage{newtxtext,newtxmath}
-% newtxtext already supplies an embedded Helvetica-compatible sans face.
+% The reference thesis uses Times New Roman for both body text and headings.
+% Keep the template portable under pdfLaTeX by mapping every sans-serif request
+% to newtx's metrically compatible Times face as well.
+\renewcommand{\sfdefault}{\rmdefault}
 \RequirePackage{microtype}
 \RequirePackage{setspace}
 \RequirePackage[table,dvipsnames]{xcolor}
@@ -295,6 +298,50 @@
     \fi
     \vspace*{12mm}
   \end{center}
+  \clearpage
+}
+
+% Library copyright notice placed before the thesis cover, following the
+% ordering and wording used in accepted PolyU electronic theses.
+\newcommand{\makecopyrightundertaking}{%
+  \clearpage
+  \thispagestyle{empty}%
+  \begingroup
+    \singlespacing
+    \small
+    \noindent\includegraphics[width=72mm]{assets/polyu-library-header.png}\par
+    \vspace{10mm}
+    \noindent\rule{\textwidth}{0.4pt}\par
+    \vspace{5mm}
+    \begin{center}
+      {\large\bfseries Copyright Undertaking}
+    \end{center}
+    \vspace{10mm}
+    This thesis is protected by copyright, with all rights reserved.\par
+    \vspace{4mm}
+    \textbf{By reading and using the thesis, the reader understands and agrees to the following terms:}
+    \begin{enumerate}[leftmargin=8mm,itemsep=3mm,topsep=4mm]
+      \item The reader will abide by the rules and legal ordinances governing copyright regarding the use of the thesis.
+      \item The reader will use the thesis for the purpose of research or private study only and not for distribution or further reproduction or any other purpose.
+      \item The reader agrees to indemnify and hold the University harmless from and against any loss, damage, cost, liability or expenses arising from copyright infringement or unauthorized usage.
+    \end{enumerate}
+    \vfill
+    \noindent\fbox{%
+      \begin{minipage}{\dimexpr\textwidth-2\fboxsep-2\fboxrule\relax}
+        \centering\bfseries IMPORTANT\par
+        \vspace{2mm}
+        \raggedright\mdseries
+        If you have reasons to believe that any materials in this thesis are deemed not suitable to be distributed in this form, or a copyright owner having difficulty with the material being included in our database, please contact \href{mailto:lbsys@polyu.edu.hk}{lbsys@polyu.edu.hk} providing details. The Library will look into your claim and consider taking remedial action upon receipt of the written requests.
+      \end{minipage}%
+    }
+    \vfill
+    \begin{center}
+      \footnotesize
+      Pao Yue-kong Library, The Hong Kong Polytechnic University, Hung Hom, Kowloon, Hong Kong\par
+      \vspace{4mm}
+      \url{http://www.lib.polyu.edu.hk}
+    \end{center}
+  \endgroup
   \clearpage
 }
 

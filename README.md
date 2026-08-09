@@ -4,7 +4,7 @@ An unofficial, anonymous-ready thesis template based on the PolyU [Research Post
 
 ## Preview
 
-[![Eight-page thesis layout showcase](assets/thesis-showcase.png)](assets/thesis-showcase.png)
+[![Eight-page thesis layout showcase](assets/thesis-showcase-new.png)](assets/thesis-showcase-new.png)
 
 For the complete set of styles and full-resolution examples, [download the compiled PDF](thesis.pdf).
 
